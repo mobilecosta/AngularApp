@@ -1,17 +1,26 @@
-import { AuthGuard } from './shared/auth.guard';
-import { HomeComponent } from './layout/home/home.component';
+import { LoginGuard } from './shared/login.guard';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthenticationComponent } from './layout/authentication/authentication.component';
+import { LoginComponent } from './layout/authentication/login/login.component';
+import { PoPageLoginModule, PoModalPasswordRecoveryModule } from '@po-ui/ng-templates';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
-  { path: '', component: AuthenticationComponent },
-  { path: '**', component: AuthenticationComponent }
+    {
+        path: '',
+        component: LoginComponent,
+        canActivate: [LoginGuard],
+        data: {
+            title: 'Bem-vindo'
+        }
+    }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+      RouterModule.forRoot(routes, {useHash: true})
+  ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+
+}

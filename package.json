@@ -20,8 +20,10 @@
     "@angular/platform-browser-dynamic": "~10.1.4",
     "@angular/router": "~10.1.4",
     "@po-ui/ng-components": "^3.8.1",
+    "@po-ui/ng-storage": "^3.9.2",
     "@po-ui/ng-templates": "^3.8.1",
     "@totvs/po-theme": "^3.8.0",
+    "jwt-decode": "^3.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

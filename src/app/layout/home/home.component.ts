@@ -9,14 +9,10 @@ import { PoMenuItem } from '@po-ui/ng-components';
 export class HomeComponent implements OnInit {
 
   readonly menus: Array<PoMenuItem> = [
-    { label: 'Home', action: this.onClick.bind(this) }
+    { label: 'Home', link: '/home', icon: 'po-icon-home' },
+    { label: 'Clientes', link: '/clientes', icon: 'po-icon po-icon-finance-bitcoin' },
+    { label: 'Logout', link: '/login' }
   ];
-
-  private onClick() {
-    alert('Clicked in menu item')
-  }
-
-  constructor() { }
 
   ngOnInit(): void {
   }
