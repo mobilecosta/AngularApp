@@ -44,20 +44,9 @@ export class LoginComponent implements OnInit {
 
     loginSubmit(formData: PoPageLogin) {
 
-        if (this.exceededAttempts <= 0) {
-            this.authService
-                .authenticate(formData.login, formData.password, formData.rememberUser)
-                .subscribe(
-                    (response) => {
-                        const body = response.body;
-                        const userName = body['name'];
-
-                        this.router.navigate(['user', userName]); // sucesso
-                    },
-                    (err) => {
-                        console.log(err.message);
-                    }
-                );
+        if ((this.exceededAttempts <= 0) &&
+            (this.authService.authenticate(formData.login, formData.password, formData.rememberUser))) {
+              this.router.navigate(['home']);
         }
     }
 

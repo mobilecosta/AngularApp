@@ -3,7 +3,6 @@ import { BehaviorSubject } from 'rxjs';
 
 import { User } from '../interfaces/user';
 import { TokenService } from './token.service';
-import * as jwt_decode from 'jwt-decode';
 
 @Injectable({
     providedIn: 'root'
@@ -15,22 +14,22 @@ export class UserService {
 
     constructor(private tokenService: TokenService) {
         this.tokenService.hasToken() &&
-            this.decodeAndNotify();
+            this.decodeAndNotify('');
     }
 
-    setToken(token: string, rememberUser: boolean) {
+    setToken(user: string, token: string, rememberUser: boolean) {
         this.tokenService.setToken(token, rememberUser);
-        this.decodeAndNotify();
+        this.decodeAndNotify(user);
     }
 
     getUser() {
         return this.userSubject.asObservable();
     }
 
-    private decodeAndNotify() {
-        const token = this.tokenService.getToken();
-        const user = jwt_decode(token) as User;
-        this.userName = user.name;
+    private decodeAndNotify(email: string) {
+        var user: User;
+
+        this.userName = email;
         this.userSubject.next(user);
     }
 

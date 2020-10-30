@@ -2,30 +2,32 @@ import { AuthGuard } from './shared/auth.guard';
 import { CoreModule } from './core/core.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { FormsModule }  from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PoModule } from '@po-ui/ng-components';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './layout/authentication/login/login.component';
-import { PoPageLoginModule, PoModalPasswordRecoveryModule } from '@po-ui/ng-templates';
+import { PoModule } from '@po-ui/ng-components';
+import { PoPageLoginModule, PoModalPasswordRecoveryModule, PoTemplatesModule } from '@po-ui/ng-templates';
+import { HomeComponent } from './layout/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PoModule,
     RouterModule.forRoot([]),
+    FormsModule,
+    CoreModule,
     PoPageLoginModule,
     PoModalPasswordRecoveryModule,
-    FormsModule,
-    CoreModule
+    PoModule,
+    PoTemplatesModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

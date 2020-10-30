@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { tap } from 'rxjs/operators';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 import { UserService } from './user.service';
 import { environment } from 'src/environments/environment';
@@ -17,13 +17,23 @@ export class AuthService {
     private userService: UserService
     ) { }
 
-  authenticate(email: string, password: string, rememberUser: boolean) {
-    return this.http
-      .post(API + '/login', {email, password}, { observe: 'response' })
-      .pipe(tap(res => {
+  async authenticate(email: string, password: string, rememberUser: boolean): Promise<boolean> {
 
-       const authToken = res.headers.get('accessToken'); // token de autenticação
-       this.userService.setToken(authToken, rememberUser); // gravando no navegador
-      }));
+    await this.getLogin(email,password).toPromise()
+      .then(res => {
+        this.userService.setToken(email, res['accessToken'], rememberUser);
+        return true;
+      })
+      .catch(err => {
+        console.log('error', err);
+      });
+
+      return false;
   }
+
+  getLogin(email,psw):Observable<any>  {
+    return this.http.post(API + '/login', { "email": email,
+                                            "password": psw })
+  }
+
 }
