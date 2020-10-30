@@ -30,7 +30,7 @@ export class LoginComponent {
         this.router.navigate(['/']);
       });
     }, () => {
-      this.poNotification.error('Invalid username or password. Please try again.');
+      this.poNotification.error('Usuário ou senha invalidos ! Tente novamente.');
     });
 
   }
