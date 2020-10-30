@@ -1,37 +1,27 @@
-import { AuthGuard } from './shared/auth.guard';
-import { CoreModule } from './core/core.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule }  from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RouterModule } from '@angular/router';
-import { LoginComponent } from './layout/authentication/login/login.component';
-import { PoModule } from '@po-ui/ng-components';
-import { PoPageLoginModule, PoModalPasswordRecoveryModule, PoTemplatesModule } from '@po-ui/ng-templates';
-import { HomeComponent } from './layout/home/home.component';
-import { MasterComponent } from './layout/master/master.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeModule } from './home/home.module';
+import { LoginService } from './login/login.service';
+import { SharedModule } from './shared/shared.module';
+import { LoginModule } from './login/login.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    HomeComponent,
-    MasterComponent
-  ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot([]),
-    FormsModule,
-    CoreModule,
-    PoPageLoginModule,
-    PoModalPasswordRecoveryModule,
-    PoModule,
-    PoTemplatesModule
+    BrowserModule,
+    SharedModule,
+    HomeModule,
+    LoginModule,
   ],
-  providers: [AuthGuard],
+  declarations: [
+    AppComponent
+  ],
+  providers: [
+    LoginService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
