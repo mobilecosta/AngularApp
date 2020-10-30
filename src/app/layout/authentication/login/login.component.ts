@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 import { AuthService } from '../../../services/auth.service';
 import { PoPageLogin } from '@po-ui/ng-templates';
@@ -24,9 +23,8 @@ export class LoginComponent implements OnInit {
     logo: string;
 
     constructor(
-        private authService: AuthService,
-        private router: Router,
-    ) { }
+        private authService: AuthService
+    ) {  }
 
     ngOnInit() {
         this.restore();
@@ -44,11 +42,9 @@ export class LoginComponent implements OnInit {
 
     loginSubmit(formData: PoPageLogin) {
 
-        if ((this.exceededAttempts <= 0) &&
-            (this.authService.authenticate(formData.login, formData.password, formData.rememberUser))) {
-              this.router.navigate(['home']);
-        }
-    }
+      this.authService.authenticate(formData.login, formData.password, formData.rememberUser);
+
+    };
 
     restore() {
         this.contactEmail = 'mobile.costa@gmail.com';
