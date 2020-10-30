@@ -11,12 +11,14 @@ import { LoginComponent } from './layout/authentication/login/login.component';
 import { PoModule } from '@po-ui/ng-components';
 import { PoPageLoginModule, PoModalPasswordRecoveryModule, PoTemplatesModule } from '@po-ui/ng-templates';
 import { HomeComponent } from './layout/home/home.component';
+import { MasterComponent } from './layout/master/master.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    MasterComponent
   ],
   imports: [
     BrowserModule,

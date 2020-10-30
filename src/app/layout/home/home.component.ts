@@ -9,9 +9,10 @@ import { PoMenuItem } from '@po-ui/ng-components';
 export class HomeComponent implements OnInit {
 
   readonly menus: Array<PoMenuItem> = [
-    { label: 'Home', link: '/home', icon: 'po-icon-home' },
-    { label: 'Clientes', link: '/clientes', icon: 'po-icon po-icon-finance-bitcoin' },
-    { label: 'Logout', link: '/login' }
+    { label: 'Home', link: '/home', icon: 'po-icon-home', shortLabel: 'Principal' },
+    { label: 'Mestre', link: '/master', icon: 'po-icon po-icon-finance-bitcoin', shortLabel: 'Mestre' },
+    { label: 'Mestre e Detalhe', link: '/masterdetail', icon: 'po-icon po-icon-finance-bitcoin', shortLabel: 'Mestre e Detalhe' },
+    { label: 'Logout', link: '/login', icon: 'po-icon-users', shortLabel: 'Usuários'  }
   ];
 
   ngOnInit(): void {
