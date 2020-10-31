@@ -7,11 +7,12 @@ import { HomeComponent } from './home.component';
 const homeRoutes: Routes = [
   { path: '', component: HomeComponent,
     children: [
-      { path: '', component: HomeDashboardComponent }
-    ]
-  },
-  // { path: 'master1', loadChildren: () => import('../master/master.module').then(m => m.MasterModule) },
-  { path: 'masterdetail', loadChildren: () => import('../masterdetail/masterdetail.module').then(m => m.MasterDetailModule) }
+      { path: '', component: HomeDashboardComponent },
+      { path: 'master1',
+        loadChildren: () => import('../master/master.module').then(m => m.MasterModule) },
+      { path: 'masterdetail',
+      loadChildren: () => import('../masterdetail/masterdetail.module').then(m => m.MasterDetailModule) }
+    ] }
 ];
 
 @NgModule({

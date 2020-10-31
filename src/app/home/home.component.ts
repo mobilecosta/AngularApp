@@ -14,10 +14,10 @@ export class HomeComponent {
 
   menus: Array<PoMenuItem> = [
     { label: 'Home', link: '/home', icon: 'po-icon-home', shortLabel: 'Principal' },
-    { label: 'Tabela 1', link: '/master1', icon: 'po-icon-table', shortLabel: 'Tabela 1' },
-    { label: 'Tabela 2', link: '/master2', icon: 'po-icon-table', shortLabel: 'Tabela 2' },
-    { label: 'Mestre e Detalhe', link: '/masterdetail', icon: 'po-icon-layers', shortLabel: 'Mestre e Detalhe' },
-    { label: 'Logout', action: this.logout.bind(this), icon: 'po-icon-users', shortLabel: 'Usuários'  }
+    { label: 'Tabela 1', link: './master1', icon: 'po-icon-table', shortLabel: 'Tabela 1' },
+    { label: 'Tabela 2', link: './master2', icon: 'po-icon-table', shortLabel: 'Tabela 2' },
+    { label: 'Mestre e Detalhe', link: './masterdetail', icon: 'po-icon-layers', shortLabel: 'Mestre e Detalhe' },
+    { label: 'Logout', action: this.logout.bind(this), icon: 'po-icon-users', shortLabel: 'Logout'  }
   ];
 
   constructor(private router: Router, private storage: PoStorageService) { }

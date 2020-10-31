@@ -18,10 +18,6 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
   },
-  {
-    path: 'master1',
-    loadChildren: () => import('./master/master.module').then(m => m.MasterModule)
-  },
   { path: '**', redirectTo: '/home', pathMatch: 'full'}
 ];
 
