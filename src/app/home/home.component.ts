@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-
 import { PoStorageService } from '@po-ui/ng-storage';
-
 import { PoMenuItem } from '@po-ui/ng-components';
 
 @Component({
@@ -12,15 +10,14 @@ import { PoMenuItem } from '@po-ui/ng-components';
 })
 export class HomeComponent {
 
-  title = 'PO Conference App';
+  title = 'Sistema de Controle';
 
   menus: Array<PoMenuItem> = [
-    { label: 'Home', icon: 'home', link: './home' },
-    { label: 'Speakers', icon: 'user', link: './speakers' },
-    { label: 'Lectures', icon: 'message', link: './lectures' },
-    { label: 'Tracks', icon: 'stock', link: './tracks' },
-    { label: 'About', icon: 'help', link: './conferences' },
-    { label: 'Logout', icon: 'exit', action: this.logout.bind(this) }
+    { label: 'Home', link: '/home', icon: 'po-icon-home', shortLabel: 'Principal' },
+    { label: 'Tabela 1', link: '/master1', icon: 'po-icon-table', shortLabel: 'Tabela 1' },
+    { label: 'Tabela 2', link: '/master2', icon: 'po-icon-table', shortLabel: 'Tabela 2' },
+    { label: 'Mestre e Detalhe', link: '/masterdetail', icon: 'po-icon-layers', shortLabel: 'Mestre e Detalhe' },
+    { label: 'Logout', action: this.logout.bind(this), icon: 'po-icon-users', shortLabel: 'Usuários'  }
   ];
 
   constructor(private router: Router, private storage: PoStorageService) { }

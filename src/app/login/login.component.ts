@@ -23,14 +23,15 @@ export class LoginComponent {
     private poNotification: PoNotificationService) { }
 
   loginSubmit(formData: PoPageLogin) {
-    const user = Object.assign({ username: formData.login, password: formData.password });
+    const user = Object.assign({ email: formData.login, password: formData.password });
 
-    this.loginService.postWithPath('login', user).subscribe(() => {
+    this.loginService.post(user).subscribe((res) => {
       this.storage.set('isLoggedIn', 'true').then(() => {
         this.router.navigate(['/']);
       });
-    }, () => {
-      this.poNotification.error('Usuário ou senha invalidos ! Tente novamente.');
+    }, (res) => {
+      if (res.status > 0)
+        { this.poNotification.error('Usuário ou senha invalidos ! Tente novamente.') };
     });
 
   }

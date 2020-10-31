@@ -9,7 +9,7 @@ import { User } from '../model/user';
 @Injectable()
 export class LoginService extends GenericService<User> {
 
-  path = 'auth';
+  path = 'login';
 
   constructor(http: HttpClient, private storage: PoStorageService) {
     super(http);
