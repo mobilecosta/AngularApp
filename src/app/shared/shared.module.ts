@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { PoModule } from '@po-ui/ng-components';
 import { PoStorageModule } from '@po-ui/ng-storage';
+import { PoTemplatesModule } from '@po-ui/ng-templates';
 
 import { AuthGuardService } from '../auth/auth-guard.service';
 import { GenericService } from './../generic/service/generic.service';
@@ -14,6 +15,7 @@ import { GenericService } from './../generic/service/generic.service';
     FormsModule,
 
     PoModule,
+    PoTemplatesModule,
     PoStorageModule.forRoot({
       name: 'appconference',
       storeName: 'mystore',
@@ -26,6 +28,7 @@ import { GenericService } from './../generic/service/generic.service';
     FormsModule,
 
     PoModule,
+    PoTemplatesModule,
     PoStorageModule
   ],
   providers: [

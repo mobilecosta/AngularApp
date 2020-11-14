@@ -29,7 +29,7 @@ export class GenericService<T> {
   }
 
   getCount(): Observable<number> {
-    return this.http.get<ObjectLength>(`${this.urlApi}/${this.path}`).pipe(map(result => (result.length)));
+    return this.http.get<PoResponse>(`${this.urlApi}/${this.path}`).pipe(map(result => (result.items.length)));
   }
 
   post(entity: any): Observable<T> {

@@ -1,3 +1,8 @@
-<po-page-list
-  p-title="Mestre">
-</po-page-list>
+<po-page-dynamic-table
+  t-show-more-disabled="true"
+  [p-service-api]="service"
+  [p-title]= "'Tabela Mestre 1'"
+  [p-actions]="pageActions"
+  [p-fields]="fields">
+  [p-loading]="isLoading"
+</po-page-dynamic-table>
