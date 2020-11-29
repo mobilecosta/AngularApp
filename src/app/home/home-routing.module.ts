@@ -8,6 +8,8 @@ const homeRoutes: Routes = [
   { path: '', component: HomeComponent,
     children: [
       { path: '', component: HomeDashboardComponent },
+      { path: 'customers',
+        loadChildren: () => import('../customers/customers.module').then(m => m.CustomersModule) },
       { path: 'master1',
         loadChildren: () => import('../master/master.module').then(m => m.MasterModule) },
       { path: 'masterdetail',

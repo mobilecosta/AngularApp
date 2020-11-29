@@ -1,0 +1,79 @@
+{
+  "users": [
+    {
+      "email": "mobile.costa@gmail.com",
+      "password": "$2a$10$ofMW3.s1Xb9dQ3FJb4lBJ.AdOZyJK.lS20IooDbucpTKSKKKoherK",
+      "id": 1
+    }
+  ],
+  "master1": [
+    {
+      "id": 1,
+      "name": "Registro 1"
+    },
+    {
+      "id": 2,
+      "name": "Registro 2"
+    },
+    {
+      "id": 3,
+      "name": "Registro 3"
+    },
+    {
+      "name": "Registro 4",
+      "id": 4
+    },
+    {
+      "name": "Registro 5",
+      "createdAt": 1604328487009,
+      "id": 5
+    },
+    {
+      "name": "Registro 6",
+      "createdAt": 1604328535757,
+      "id": 6
+    },
+    {
+      "name": "Registro 7",
+      "id": 7
+    },
+    {
+      "name": "Registro 8",
+      "id": 8
+    },
+    {
+      "name": "Registro 9",
+      "id": 9
+    },
+    {
+      "name": "Registro 10",
+      "id": 10
+    }
+  ],
+  "master2": [],
+  "masterdetail": [],
+  "clientes": [
+    {
+      "status": "inactive",
+      "name": "Wagner Mobile Costa",
+      "email": "mobile.costa@gmail.com",
+      "nickname": "Mobile",
+      "birthdate": "1979-10-12",
+      "genre": "male",
+      "street": "Esplanada, 23",
+      "city": "3550308",
+      "id": 1
+    },
+    {
+      "status": "active",
+      "name": "Erica Souza Santos Costa",
+      "email": "e.souza.santos.costa@gmail.com",
+      "nickname": "Erica",
+      "birthdate": "1983-08-06",
+      "genre": "female",
+      "street": "Araras, 99",
+      "city": "3550308",
+      "id": 2
+    }
+  ]
+}
