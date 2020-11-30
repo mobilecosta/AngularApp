@@ -54,26 +54,19 @@
   "masterdetail": [],
   "clientes": [
     {
-      "status": "inactive",
+      "status": "active",
       "name": "Wagner Mobile Costa",
       "email": "mobile.costa@gmail.com",
       "nickname": "Mobile",
       "birthdate": "1979-10-12",
       "genre": "male",
-      "street": "Esplanada, 23",
+      "nationality": "Brasileiro",
+      "street": "Rua Esplanada, 23",
       "city": "3550308",
+      "country": "Brasil",
+      "mother": "Elizabete Mobile Costa",
+      "father": "Jurandy da Silva Costa",
       "id": 1
-    },
-    {
-      "status": "active",
-      "name": "Erica Souza Santos Costa",
-      "email": "e.souza.santos.costa@gmail.com",
-      "nickname": "Erica",
-      "birthdate": "1983-08-06",
-      "genre": "female",
-      "street": "Araras, 99",
-      "city": "3550308",
-      "id": 2
     }
   ]
 }
