@@ -7,6 +7,8 @@ import { PoStorageService } from '@po-ui/ng-storage';
 
 import { LoginService } from './login.service';
 
+import {Md5} from 'ts-md5/dist/md5';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -23,7 +25,10 @@ export class LoginComponent {
     private poNotification: PoNotificationService) { }
 
   loginSubmit(formData: PoPageLogin) {
-    const user = Object.assign({ email: formData.login, password: formData.password });
+
+    const md5 = new Md5();
+
+    const user = Object.assign({ email: formData.login, pass: md5.appendStr(formData.password).end() });
 
     this.loginService.post(user).subscribe((res) => {
       this.storage.set('isLoggedIn', 'true').then(() => {

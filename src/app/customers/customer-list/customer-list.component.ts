@@ -16,7 +16,7 @@ import {
 })
 export class CustomerListComponent implements OnInit, OnDestroy {
 
-  private readonly url: string = 'http://localhost:3000/clientes';
+  private readonly url: string = 'http://localhost:3000/sfj0000000';
 
   private customerRemoveSub: Subscription;
   private customersRemoveSub: Subscription;
@@ -55,7 +55,7 @@ export class CustomerListComponent implements OnInit, OnDestroy {
   //   { label: 'São Paulo', value: 'São Paulo' }
   // ];
   public readonly columns: Array<PoTableColumn> = [
-    { property: 'name', label: 'Nome' },
+    { property: 'sfj_nome', label: 'Nome' },
     { property: 'nickname', label: 'Apelido' },
     { property: 'email', label: 'E-mail', type: 'link', action: this.sendMail.bind(this) },
     { property: 'birthdate', label: 'Nascimento', type: 'date', format: 'dd/MM/yyyy', width: '100px' },

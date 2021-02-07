@@ -4,8 +4,6 @@ import { HomeComponent } from './home.component';
 import { HomeDashboardComponent } from './home-dashboard/home-dashboard.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { SharedModule } from './../shared/shared.module';
-import { MasterService } from './../master/master.service';
-import { MasterDetailService } from './../masterdetail/masterdetail.service';
 
 @NgModule({
   imports: [
@@ -17,7 +15,6 @@ import { MasterDetailService } from './../masterdetail/masterdetail.service';
     HomeComponent,
     HomeDashboardComponent
   ],
-  providers: [MasterService,
-              MasterDetailService]
+  providers: []
 })
 export class HomeModule { }
