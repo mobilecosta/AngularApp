@@ -28,14 +28,14 @@ export class LoginComponent {
 
     const md5 = new Md5();
 
-    const user = Object.assign({ email: formData.login, pass: md5.appendStr(formData.password).end() });
+    const user = Object.assign({  email: formData.login, password: formData.password });
 
     this.loginService.post(user).subscribe((res) => {
       this.storage.set('isLoggedIn', 'true').then(() => {
         this.router.navigate(['/']);
       });
     }, (res) => {
-      if (res.status > 0)
+      if ((! res.hasOwnProperty('accessToken')))
         { this.poNotification.error('Usuário ou senha invalidos ! Tente novamente.') };
     });
 

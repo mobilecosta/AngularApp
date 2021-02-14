@@ -16,7 +16,7 @@ const actionUpdate = 'update';
 })
 export class CustomerFormComponent implements OnDestroy, OnInit {
 
-  private readonly url: string = 'http://localhost:3000/clientes';
+  private readonly url: string = 'http://localhost:3000/customers';
 
   private action: string = actionInsert;
   private customerSub: Subscription;

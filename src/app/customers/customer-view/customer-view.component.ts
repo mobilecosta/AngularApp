@@ -13,7 +13,7 @@ import { PoNotificationService } from '@po-ui/ng-components';
 })
 export class CustomerViewComponent implements OnDestroy, OnInit {
 
-  private readonly url: string = 'http://localhost:3000/clientes';
+  private readonly url: string = 'http://localhost:3000/customers';
 
   private customerRemoveSub: Subscription;
   private customerSub: Subscription;

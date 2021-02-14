@@ -21,6 +21,7 @@ export class HomeComponent {
   constructor(private router: Router, private storage: PoStorageService) { }
 
   logout(): void {
+
     this.storage.remove('isLoggedIn').then(() => {
       this.router.navigate(['/login']);
     });

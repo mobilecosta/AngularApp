@@ -4,7 +4,6 @@ import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
-import { ObjectLength } from './../../model/objectLength';
 import { PoResponse } from '../../model/po-response.interface';
 
 @Injectable()
@@ -36,8 +35,8 @@ export class GenericService<T> {
     return this.http.post<T>(`${this.urlApi}/${this.path}`, entity);
   }
 
-  postWithPath(path: string, entity: any): Observable<T> {
-    return this.http.post<T>(`${this.urlApi}/${this.path}/${path}`, entity);
+  postPath(): Observable<T> {
+    return this.http.post<T>(`${this.urlApi}/${this.path}`, ``);
   }
 
   put(entity: any): Observable<T> {
